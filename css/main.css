@@ -1,0 +1,272 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  font-family: "Dosis", Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #2e2e2e;
+}
+
+ul {
+  list-style: none;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+}
+
+ul li {
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 5px;
+  transition: all 0.1s ease;
+}
+ul li.active {
+  border-radius: 5px;
+  color: white;
+  background-color: #e20e0e;
+}
+
+.logo {
+  width: 150px;
+  cursor: pointer;
+}
+#cursorPointer {
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.center {
+  text-align: center;
+}
+
+.cartLogo i {
+  color: #414142;
+  transition: all 0.1s ease;
+}
+.cartLogo i:hover {
+  cursor: pointer;
+  color: #be4b4b;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  width: 85%;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+#filter .sortBy {
+  display: flex;
+  justify-content: end;
+}
+#filter .owners {
+  display: flex;
+  justify-content: end;
+  margin-left: 1rem;
+}
+
+#btnAjax {
+  background-color: #4b4b4b;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+#filter #btnAjax:hover {
+  background-color: #be4b4b;
+}
+
+#filter .sortBy select {
+  border-radius: 5px;
+  border: 1px solid #c0c0c0;
+  padding: 0.5rem;
+}
+select:focus {
+  outline: 0;
+}
+
+#filter ul li {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0.2rem;
+  padding: 0.5rem;
+}
+#filter ul li:hover {
+  background-color: #e20e0e;
+  color: white;
+}
+
+.cursorPointer {
+  background-color: #e77474;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+.cursorPointer:hover {
+  background-color: #e20e0e;
+  color: #fdfdfd;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.nav-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  max-width: 1200px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.card {
+  transition: 0.5s all ease;
+}
+
+#cards {
+  margin: 1rem auto;
+  width: 100%;
+}
+#cards .cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+#cards .cardsContainer .card {
+  max-width: 250px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+}
+#cards .cardsContainer .card_image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+#cards .cardsContainer .card_image img {
+  width: 90%;
+}
+#cards .cardsContainer .card_content h2 {
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+}
+#cards .cardsContainer .card_content button {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 0.4rem;
+  font-weight: bold;
+  color: white;
+}
+
+.cart-items {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  display: none;
+  background-color: #eecfcf;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  padding: 1.6rem;
+  transition: 0.3s all ease;
+  z-index: 1;
+}
+
+.cart-items p {
+  margin-top: 1rem;
+  background-color: #e77474b6;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+}
+i:hover {
+  cursor: pointer;
+  color: #e77474b6;
+}
+
+.cart-items table #tbody tr td {
+  padding: 0.5rem 0.2rem;
+}
+
+.cart-items table tr {
+  text-align: left;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 1;
+}
+
+@media screen and (min-width: 600px) {
+  #cards .cardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #cards .cardsContainer .card {
+    max-width: 350px;
+    width: 100%;
+  }
+  #cards .cardsContainer .card img {
+    width: 75%;
+  }
+
+  #filter {
+    flex-direction: row;
+    justify-content: center;
+  }
+  select {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #cards .cardsContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #cards .cardsContainer .card {
+    max-width: 280px;
+    width: 100%;
+  }
+  #cards .cardsContainer .card img {
+    width: 75%;
+  }
+}

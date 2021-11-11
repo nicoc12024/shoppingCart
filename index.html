@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-header">
+      <img src="pngwing.com.png" class="logo" alt="logo" />
+      <div class="cartLogo">
+        <i class="fas fa-shopping-cart fa-3x"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="cart-items">
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Color</th>
+          <th>Ram</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+
+      </tbody>
+    </table>
+    <p class="total center ">Total: <span class="total"></span></p>
+    <p class="center cursorPointer" id="resetCart">Reset cart</p>
+    <p class="center buy cursorPointer">Buy</p>
+  </div>
+
+  <div id="filter" class="center">
+    <ul>
+      <li id="all">All</li>
+      <li id="samsung">Samsung</li>
+      <li id="iphone">Iphone</li>
+      <li id="motorola">Motorola</li>
+    </ul>
+
+    <div class="sortBy">
+      <select id="selection">
+        <option selected>Sort by</option>
+        <option value="high">High price first</option>
+        <option value="cheap">Cheap price first</option>
+      </select>
+    </div>
+
+    <div class="owners">
+
+    </div>
+  </div>
+
+  <section id="cards">
+    <div class="container">
+      <div class="cardsContainer">
+
+      </div>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
