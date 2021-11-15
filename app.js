@@ -153,6 +153,7 @@ function cartToHTML() {
   // b) agregamos el nuevo producto al cartDom
   for (const producto of cartDom) {
     const fila = document.createElement("tr");
+    fila.classList.add("row");
     fila.innerHTML = `
      <td> ${producto.brand.toUpperCase()}</td>
      <td> ${producto.color.toUpperCase()}</td>
@@ -182,6 +183,20 @@ function toStorage() {
 cartLogo.addEventListener("click", function () {
   cart.classList.toggle("show");
 });
+
+// cierro menu con click afuera
+document.onclick = function (event) {
+  const element = "addToCart";
+  if (
+    event.target.parentElement.parentElement.id != "tbody" &&
+    event.target.parentElement.parentElement.classList != "row" &&
+    event.target.parentElement != cartLogo &&
+    event.target != cart &&
+    event.target.parentElement.classList != "card_content"
+  ) {
+    cart.classList.remove("show");
+  }
+};
 
 // Active and Filters Phones using forEach and For..of
 liItem.forEach((li) => {
@@ -250,22 +265,18 @@ liItem.forEach((li) => {
 });
 
 // GETJSON
-
 const URLJSON = "owners.json";
 $(".owners").prepend('<button id="btnAjax">See Owner</button>');
 $("#btnAjax").click(() => {
   $.getJSON(URLJSON, function (respuesta, estado) {
     if (estado == "success") {
       let allOwners = respuesta.owner;
-      for (const owner of allOwners) {
-        let name = owner.name;
-        let lastName = owner.lastName;
-        let phoneNumber = owner.phoneNumber;
 
+      for (const owner of allOwners) {
         Swal.fire({
           position: "center",
           icon: "info",
-          title: name + " " + lastName + " " + phoneNumber + " call only on weekdays.",
+          title: `${owner.name}` + " " + `${owner.lastName}` + " " + `${owner.phoneNumber}` + " call only on weekdays.",
           showConfirmButton: false,
           timer: 8000,
         });

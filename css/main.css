@@ -205,8 +205,8 @@ nav {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   margin: 0 auto;
   padding: 1.6rem;
+  z-index: 5;
   transition: 0.3s all ease;
-  z-index: 1;
 }
 
 .cart-items p {
